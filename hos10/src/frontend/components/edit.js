@@ -16,7 +16,7 @@ export default function Edit() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`YourBackendURL/record/${params.id.toString()}`);
+     const response = await fetch(`https://refactored-space-adventure-p6rj6r74xpqc9r7w-5050.app.github.dev/${params.id.toString()}`);
  
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -27,7 +27,7 @@ export default function Edit() {
      const record = await response.json();
      if (!record) {
        window.alert(`Record with id ${id} not found`);
-       navigate("/");
+       navigate("/recordlist");
        return;
      }
  
@@ -55,7 +55,7 @@ export default function Edit() {
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`YourBackendURL/record/${params.id}`, {
+   await fetch(`https://refactored-space-adventure-p6rj6r74xpqc9r7w-5050.app.github.dev/record/${params.id}`, {
      method: "PATCH",
      body: JSON.stringify(editedPerson),
      headers: {

@@ -25,7 +25,7 @@ export default function Create() {
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
  
-   await fetch("YourBackendURL/record", {
+   await fetch("https://refactored-space-adventure-p6rj6r74xpqc9r7w-5050.app.github.dev/record", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export default function Create() {
    });
  
    setForm({ name: "", position: "", level: "" });
-   navigate("/");
+   navigate("/recordlist");
  }
  
  // This following section will display the form that takes the input from the user.
